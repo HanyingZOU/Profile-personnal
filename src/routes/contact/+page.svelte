@@ -72,7 +72,7 @@
         <label for="message">Message</label>
         <input type="text" id="message" name="message" placeholder="Leave me a message" bind:value={message}>
 
-        <button on:click={handleClick}>Submit</button>
+        <button disabled={!name||!message||!mail||!selected} on:click={handleClick}>Submit</button>
       </div>
     </div>
     <div class="right">
@@ -213,8 +213,11 @@
     border-radius: 4px;
     cursor: pointer;
   }
-  button:hover {
+  button:hover:enabled {
     background-color: #7F58C2;
+  }
+  button:disabled{
+    background-color:grey;
   }
 
 	footer{
